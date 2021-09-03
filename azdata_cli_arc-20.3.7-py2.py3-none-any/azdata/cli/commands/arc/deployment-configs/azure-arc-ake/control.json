@@ -1,0 +1,62 @@
+{
+   "apiVersion": "arcdata.microsoft.com/v1beta1",
+   "kind": "datacontroller",
+   "metadata": {
+      "name": "controlplane"
+   },
+   "spec": {
+      "infrastructure": "onpremises",
+      "credentials": {
+         "serviceAccount": "sa-mssql-controller",
+         "controllerAdmin": "controller-login-secret",
+         "dockerRegistry": "arc-private-registry",
+         "domainServiceAccount": "domain-service-account-secret"
+      },
+      "docker": {
+         "registry": "mcr.microsoft.com",
+         "repository": "arcdata",
+         "imageTag": "public-preview-jun-2021",
+         "imagePullPolicy": "Always"
+      },
+      "storage": {
+         "data": {
+           "className": "",
+           "accessMode": "ReadWriteOnce",
+           "size": "15Gi"
+         },
+         "logs": {
+           "className": "",
+           "accessMode": "ReadWriteOnce",
+           "size": "10Gi"
+         }
+      },
+      "security": {
+         "allowRunAsRoot": false,
+         "allowDumps": true,
+         "allowNodeMetricsCollection": true,
+         "allowPodMetricsCollection": true
+      },
+      "services": [
+         {
+            "name": "controller",
+            "serviceType": "LoadBalancer",
+            "port": 30080
+         },
+         {
+            "name": "serviceProxy",
+            "serviceType": "LoadBalancer",
+            "port": 30777
+         }
+      ],
+      "settings": {
+         "controller": {
+            "logs.rotation.size": "5000",
+            "logs.rotation.days": "7",
+            "enableBilling": "True"
+         },
+         "ElasticSearch": {
+            "vm.max_map_count": "-1"
+         }
+      }
+   }
+}

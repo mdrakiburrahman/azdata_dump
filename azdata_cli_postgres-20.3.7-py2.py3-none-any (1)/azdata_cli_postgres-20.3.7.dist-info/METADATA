@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: azdata-cli-postgres
+Version: 20.3.7
+Summary: Microsoft Azure Data CLI.
+Home-page: http://www.microsoft.com/sql
+Author: Microsoft Corporation
+Author-email: dpgswdist@microsoft.com
+License: https://aka.ms/eula-azdata-en
+Keywords: sql server,sql,cli,azdata,data
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+License-File: ../../../LICENSE.txt
+Requires-Dist: humanfriendly (==8.1)
+
+Microsoft AZDATA CLI
+======================
+
+Features
+--------
+
+Microsoft SQL CLI tool
+
+CLI Installation
+---------------------------
+
+.. code-block:: bash
+
+    $ pip install azdata-cli-0.0.1-py2.py3-none-any.whl
+
+
+.. :changelog:
+
+Microsoft `azdata-cli-{{command}}` module
+=====================================================
+
+0.0.1 (2018-10-01)
+------------------
+
+* Initial preview release.
+
